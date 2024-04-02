@@ -1,6 +1,7 @@
+<!-- (keyup.enter)="emitKeyUp(txtInput.value)" -->
 <input type="text"
-       placeholder="Buscar por capital"
+       [placeholder]="placeholder"
        class="form-control"
-       (keyup.enter)="emitKeyUp(txtInput.value)"
+       (keyup)="onKeyPress(txtInput.value)"
        #txtInput
        >
