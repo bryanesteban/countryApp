@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { Subject, Subscription, debounceTime } from 'rxjs';
+import { Subject, Subscription, debounceTime, tap } from 'rxjs';
 
 @Component({
   selector: 'shared-search-box',
@@ -13,6 +13,9 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
 
   @Input()
   public placeholder:string = '';
+
+  @Input()
+  public initialValue:string = '';
 
   @Output()
   public onValue = new EventEmitter<string>();
